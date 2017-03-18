@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is a exercise page in IFE</title>
+</head>
+<body>
+    <center>
+        <header>
+            <h1>Dubhe's WebPage</h1>
+            <br/><a href="../M.A.P/BG_AN.html">点我进入</a><br/>
+            <hr/>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                <a href="#home">首页</a>
+            </li>
+                <li>
+                    <a href="#pre">展示</a>
+                </li>
+
+                <li>
+                    <a href="#note">笔记</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+          <section id="home">
+              <h3>
+                 A form.
+              </h3>
+              <p>this is a demo in  <abbr title="百度前端学院">IFE</abbr></p>
+              <form>
+                  <label for="username">请输入用户名: </label>
+                  <input type="text" id="username" name="username">
+                  <label for="username">请输入密码: </label>
+                  <input type="password" id="password" name="password">
+                  <input type="button" id="log" placeholder="登录" value="登录">
+
+              </form>
+          </section>
+            <br/>
+            <section id="pre">
+                <div>
+                    <h3>
+                       分布特征
+                    </h3>
+
+                    <article>
+                        <figure>
+                            <figcaption> DBSCAN数据</figcaption>
+                            <img src="./img/dbscan_map.png">
+                        </figure>
+                        <p>
+                            DBSCAN（Density-based Spatial Clustering of Application with Noise）是由Ester等人在1996年提出的一种基于密度的聚类算法，是M-DBSCAN的核心。该算法的核心是使空间中一定距离(Eps)范围内的点对象数目达到指定数目(MinPt)的所有对象成为一个独立的分类，该模型可以在含有噪声空间的数据中将以高密度的对象划分为一类，并且不受聚类类别数和形状的限制[10]。DBSCAN要求对于单个类中的每一个点，在给定范围内至少有一定数量的领域点[11]。
+                        </p>
+                        <figure>
+                            <figcaption> DBSCAN聚类结果</figcaption>
+                            <img src="./img/bridge_0.007_2.png">
+                            <img src="./img/bridge_0.03_5.png">
+                            <img src="./img/bridge_0.05_4.png">
+                            <img src="./img/bridge_0.08_10.png">
+                        </figure>
+                        <p>经过距离矩阵直方图绘制后发现，距离密度在区间0.00108-0.217之间呈现上升趋势，之后呈现下降趋势。在拐点进行聚类分析后，得到全县内为一大类，因此将区间缩小至中值，选取区间0.001-0.1进行DBSCAN聚类分析，结果如图(图 5)所示在这里，我们可以把聚类结果认为无差状态，即每个聚类结果单纯为一热点区域，而没有较大的属性差别。
+                            Eps为0.007时出现了两点之间的聚类(a)，主要分布于县内各乡镇，说明各镇的廊桥一般不会单独出；Eps为0.03时出现了最小为5点之间聚类(b)，但类别数远低于前者，说明拥有5座桥以上的区县较少，主要为松源镇、岭头乡、举水乡、合湖乡、安南乡。Eps为0.05时，将聚集区划分为西北角，西南角，东南部三个主要部分，与地形差异契合，西南角以平原为主，西北角为进入庆元县中部平原的廊道，东南角以山地为主，而未被归入大类中的东北角以高山地形为主；Eps为0.08时，区分出了最小值为10的聚类情况，将类别进一步扩大化，大致可看为庆元县腹地的大聚集区，与龙泉县交界的黄田竹口聚集区，与景宁交界的百山祖合湖山地聚集区。
+                        </p>
+                        <figure>
+                            <figcaption> SDE</figcaption>
+                            <img src="./img/sde.jpg" width="800px">
+                        </figure>
+                        <P>
+                            通过绘制标准差(Standard Deviational Ellipse,简称 SDE)椭圆来判断数据的离散程度，并能找到要素的离散趋势和扩散方向。如图所示，廊桥离散程度较高，扩展到接近整个县的范围，绘制的标准差椭圆大致接近县界线的形态，呈现东西走向。但椭圆中心偏向西部，即松源镇所在的地区。
+                        </P>
+
+                    </article>
+                </div>
+            </section>
+            <br/>
+            <section id="note">
+                <h3>摘录笔记</h3>
+                <article>
+                    <p>一些常用的html元素，特别是html文本元素的语义化使用中，也有一些可以优化及需要注意的地方</p>
+                    <ul>
+                        <li><code>&lt;strong&gt;</code>和<code>&lt;b&gt;</code>，<code>&lt;em&gt;</code>和<code>
+                            &lt;i&gt;</code>，其效果差不多是一样的，但是前者的语义化更加友好白色空间折叠：当浏览器遇到两个或者两个以上的白色空间元素（空格，换行）时，会折叠成一个空格。自己编码时注意换行应该用<code>
+                            &lt;br&gt;</code>。
+                        </li>
+                        <li>文档中的一些嵌入式内容，比如引用的图片，插图，表格，代码段等，可以作为独立的单元，当这部分转移到附录中或者其他页面时不会影响到主体，这样的元素都可以放在<code>&lt;figure&gt;</code>元素内，而且可以搭配其子元素<code>&lt;figcaption&gt;</code>作很好的元素说明或者备注信息</li>
+                        <li>img元素最好附带alt信息，即对图片进行文本说明，当图像无法查看时会显示这段文本描述</li>
+                        <li>table元素现在也有更好的语义化结构元素<ul><li>caption 表格的标题</li>
+                            <li>thead 适合放表格的表头行</li>
+                            <li>tbody 表格的主体部分</li>
+                            <li>tfoot 表格的脚注部分</li>
+                        </ul></li>
+                        <li>form表单元素， <ul>
+                            <li>label标签，为input元素定义标注，改进了表单控件的可用性，当你点击到label标签时，会自动聚焦到对应控件上，label标签一般有两种用法
+                                <ol>
+                                    <li>label的for属性与控件的id对应，比如
+                                        <pre><code>&lt;<span>label</span> <span>for</span>=<span>"username"</span>&gt;请输入用户名: &lt;/<span>label</span>&gt;&lt;<span>input</span> <span>type"text"</span>= id=<span>"username"</span> name=<span
+                                                class="hljs-string">"username"</span>&gt;
+</code></pre>
+                                        label内嵌控件，比如
+                                        <pre><code>&lt;<span class="hljs-keyword">label</span>&gt;请输入用户名&lt;<span
+                                                class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span
+                                                class="hljs-string">"text"</span> id=<span class="hljs-string">"username"</span> name=<span
+                                                class="hljs-string">"username"</span>&gt;&lt;/<span
+                                                class="hljs-keyword">label</span>&gt;
+</code></pre>
+                                    </li>
+                                </ol>
+                                placeholder属性，其值会在输入字段为空时显示，并会在字段获得焦点时消失
+                            </li>
+                            <li>对于表单中的单选radio控件和复选checkbox控件以及下拉框select控件，可以为radio, checkbox添加checked属性以及为option添加selected属性让其默认选中</li>
+                        </ul></li>
+                    </ul>
+                </article><br/><span>来源<a href="http://ife.baidu.com/note/detail/id/486">关于语义化标签的一些思考</a></span>
+
+            </section>
+        </main>
+        <br/>
+        <hr/>
+        <br/>
+        <footer>
+            <div>copyright © Zhang Dubhe</div>
+        </footer>
+    </center>
+</body>
+</html>
